@@ -11,14 +11,14 @@ const { div, button, form, label, input, table, thead, tbody, tr, th, td } = hh(
 const cell = (tag, className, value, id = 0) => 
   tag({ className, id}, value);
 
-const tableHeader = thead([tr([cell(th, "text-left", "Weather"), cell(th, "text-left", "Temp"), cell(th, "text-left", "Low"), cell(th, "text-left", "High"), cell(th, "", "")])]);
+const tableHeader = thead([tr([cell(th, "text-left", "Weather"), cell(th, "text-left", "Temp"), cell(th, "text-left", "High"), cell(th, "text-left", "Low"), cell(th, "", "")])]);
 
 const weatherRow = (dispatch, className, weathers) =>
   tr({ className }, [
     cell(td, cellStyle, weathers.description),
     cell(td, cellStyle, weathers.temp),
-    cell(td, cellStyle, weathers.low),
     cell(td, cellStyle, weathers.high),
+    cell(td, cellStyle, weathers.low),
     cell(td, cellStyle + "text-right", [
       button(
         {
